@@ -17,10 +17,11 @@ class IndexView(generic.ListView):
 
         month = int(self.request.GET.get('month', now.month))
 
-        start = datetime.datetime(year=now.year,month=month, day=1)
         if month >= 12:
+            start = datetime.datetime(year=now.year,month=12, day=1)
             end = datetime.datetime(year=now.year,month=12, day=31)
         else:
+            start = datetime.datetime(year=now.year,month=month, day=1)
             end = datetime.datetime(year=now.year,month=month+1, day=1)
 
         days=[]
