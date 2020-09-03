@@ -1,0 +1,200 @@
+.bg-teal {
+  background-color: #20c997;
+}
+
+#conges .boxbuf {
+ margin-top:35px
+}
+#conges .legende {
+ font-size:12px;
+ padding-top:10px
+}
+#conges .legende div {
+ font-size:12px
+}
+#conges .legende div.texte {
+ padding-left:0
+}
+#conges .legende div img {
+ width:15px
+}
+#conges .calendrier td.we,
+#conges .we {
+ background-color:#76b9cc
+}
+#conges .calendrier td.jferm,
+#conges .jferm {
+ background-color:#95e7ff
+}
+#conges .aujourdhui,
+#conges .calendrier td.aujourdhui {
+ background-color:#ddd;
+ font-weight:700
+}
+#conges table.calendrier {
+ width:100%;
+ background-color:#fff
+}
+#conges .calendrier table {
+ border-spacing:1px
+}
+#conges .calendrier td {
+ border:1px solid #ccc;
+ width:20px;
+ height:25px;
+ text-align:center
+}
+#conges .calendrier td.multititre {
+ width:200px
+}
+#conges .calendrier td.mensuel {
+ height:50px
+}
+#conges table.mensuel th {
+ text-align:center;
+ padding:0
+}
+#conges table.mensuel td {
+ padding:0
+}
+#conges .calendrier td.mensuelvide {
+ width:100px;
+ height:50px;
+ background-color:#f2f2f2
+}
+#conges .calendrier table.jour {
+ border-spacing:0;
+ width:100%;
+ background-color:transparent;
+ border-collapse:collapse
+}
+#conges .calendrier table.jour tbody tr:nth-of-type(2n+1) {
+ background-color:transparent
+}
+#conges .calendrier table.jour tbody {
+ background-color:transparent
+}
+#conges .calendrier table.jour td {
+ border:none;
+ min-width:8px;
+ width:50%;
+ margin:0
+}
+#conges img.calelt {
+ width:75%;
+ height:32px;
+ border:0;
+ padding:0
+}
+#conges img.caleltmen {
+ width:40px;
+ height:15px;
+ border:0;
+ padding:0
+}
+#vacscolaires .zonea {
+ background-color:#f7a600;
+ color:#fff
+}
+#vacscolaires .zoneb {
+ background-color:#5fc3da;
+ color:#fff
+}
+#vacscolaires .zonec {
+ background-color:#afcb07;
+ color:#fff
+}
+#vacscolaires td {
+ text-align:center;
+ white-space:nowrap
+}
+#conges .rouge,
+#valconges .rouge {
+ color:Red
+}
+#conges .orange {
+ color:#f90
+}
+#conges .vert {
+ color:#01d501
+}
+#conges .orange,
+#conges .rouge,
+#conges .vert {
+ font-weight:700
+}
+.suividem h3 {
+ font-size:16px;
+ font-weight:700;
+ margin:0 0 7px 0
+}
+.suividem div.desc {
+ font-size:14px;
+ width:220px
+}
+.suividem div.desc em {
+ font-size:11px
+}
+.suividem div.soldes {
+ font-size:12px;
+ width:140px
+}
+#tabsent li>a {
+ height:100px
+}
+#orgacont a.hilight {
+ color:#00b8de;
+ font-weight:700
+}
+#conges table.imp {
+ border-spacing:0;
+ width:100%;
+ border:1px solid
+}
+#conges table.imp td {
+ color:#000;
+ font:11px sans-serif;
+ text-align:center;
+ vertical-align:middle;
+ border:1px solid
+}
+#conges table.imp th {
+ border:1px solid
+}
+#valconges h3 {
+ font-size:14px;
+ font-weight:700;
+ color:#000;
+ margin:0 0 5px 0;
+ line-height:18px
+}
+#valconges h4 {
+ font-size:12px;
+ font-weight:700;
+ color:#000;
+ margin:0 0 5px 0;
+ line-height:16px
+}
+#valconges em {
+ font-size:11px
+}
+#valconges td.ilight {
+ background-color:#daf1ff;
+ font-weight:700
+}
+#valconges td.validcol {
+ width:15%
+}
+#valconges .btn-valid.active {
+ color:#fff;
+ background-color:#5cb85c;
+ box-shadow:none
+}
+#valconges .btn-novalid.active {
+ color:#fff;
+ background-color:#d9534f;
+ box-shadow:none
+}
+.planningpop h3 {
+ display:none
+}

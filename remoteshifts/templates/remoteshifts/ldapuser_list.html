@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block style %}<link href="{% static "css/intra20_conges.css" %}" rel="stylesheet" type="text/css">{% endblock %}
+{% block scripts %}
+<script
+			  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+			  crossorigin="anonymous"></script>
+<script type="text/javascript">
+  {% for shift in fixed_remote_shifts %}
+  $('.{{ shift.user.uid }}-{{ shift.fixed_day }}').addClass("bg-teal");
+  {% endfor %}
+
+
+  {% for shift in scheduled_remote_shifts %}
+  document.getElementById("{{ shift.user.uid }}-{{ shift.day.day }}").className = "bg-teal";
+  {% endfor %}
+
+</script>{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="btn-toolbar my-3">
+  <div class="btn-group mx-1" role="group" aria-label="Navigation par mois">
+    <a href="?month={{ days.0|date:"n"|add:"-1" }}" class="btn btn-primary">&nbsp;&lt;&nbsp;</a>
+    <a href="#" class="btn btn-primary inactive">{{ days.0|date:"F"|capfirst }}</a>
+    <a href="?month={{ days.0|date:"n"|add:"1" }}" class="btn btn-primary">&nbsp;&gt;&nbsp;</a>
+  </div>
+  <div class="btn-group mx-1" role="group" aria-label="Navigation par année">
+    <a href="#" class="modal-link btn btn-primary">&nbsp;&lt;&nbsp;</a>
+    <a href="#" class="btn btn-primary">{{ days.0|date:"Y" }}</a>
+    <a href="#" class="modal-link btn btn-primary">&nbsp;&gt;&nbsp;</a>
+  </div>
+  <div class="btn-group mx-1" role="group" aria-label="Aujourd'hui">
+    <a href="#" class="modal-link btn btn-outline-primary">Aujourd'hui</a>
+  </div>
+</div>
+<div id="conges">
+  <div class="table-responsive">
+    <table class="table table-sm table-striped table-bordered calendrier text-center">
+        <thead class="font-weight-normal">
+          <tr>
+            <th class="font-weight-normal" scope="col">Nom</th>
+            {% for day in days %}
+            <th class="font-weight-normal{% if day|date:"w" == '0' or day|date:"w" == '6'  %} we{% endif %}{% if day|date:"j" == now|date:"j" %} aujourdhui font-weight-bold{% endif %}">{{ day|date:"j" }}<br>{{ day|date:"D"|slice:":1"|capfirst }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in object_list %}
+          <tr>
+            <td class="font-weight-light">{{ user.given_name }} {{ user.sn }} <a href="{% url 'remoteshifts:user_shifts' user.uid %}" class="text-primary" style="float: right;"><i class="fas fa-user-edit"></i></a></td>
+            {% for day in days %}
+            <td id="{{ user.uid }}-{{ day|date:"j" }}" class="{{ user.uid }}-{{ day|date:"w" }}{% if day|date:"w" == '0' or day|date:"w" == '6'  %} we{% endif %}{% if day|date:"j" == now|date:"j" %} aujourdhui{% endif %}"></td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="row legende">
+        <div class="col-md-1 col-xs-2"><div class="float-right bg-teal" style="width: 16px; height: 24px;"></div></div>
+        <div class="col-md-5 col-xs-4 texte">Jour de télétravail</div>
+      </div>
+  </div>
+</div>
+{% endblock %}

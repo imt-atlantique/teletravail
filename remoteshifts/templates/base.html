@@ -1,0 +1,23 @@
+{% load static %}
+{% load bootstrap4 %}
+<!doctype html>
+<html lang="fr">
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Nanogrid management website">
+		<meta name="author" content="Baptiste Gaultier">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+		<title>Télétravail SRCD</title>
+		<link href="{% static "css/intra20_sr.css" %}" rel="stylesheet">
+		<link href="{% static "css/bs-intra20.css" %}" rel="stylesheet">
+		{% block style %}{% endblock %}
+	</head>
+  <body>
+		<h4>{% block title %}{% endblock %}</h4>
+		{% block content %}{% endblock %}
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,273 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ color:#00b8de;
+ font-family:Raleway,sans-serif
+}
+h1 {
+ margin-bottom:20px
+}
+h2 {
+ margin-top:30px
+}
+h3 {
+ color:#565656
+}
+.unormal {
+ color:#000;
+ font-size:15px;
+ font-weight:400;
+ text-align:justify
+}
+.unormalng,
+.unormalngg {
+ color:#000;
+ font-size:17px;
+ font-weight:400
+}
+.unormalnp {
+ color:#000;
+ font-size:13px;
+ font-weight:400
+}
+.unormalngg {
+ font-weight:700
+}
+hr {
+ border-color:#ddd
+}
+#mod2col2 div,
+#mod2col2b div,
+#mod2col3 div {
+ text-align:justify
+}
+#mod2col2 div.gauche,
+#mod2col3b div.gauche {
+ float:left
+}
+#mod2col2 div.gauche {
+ width:68%
+}
+#mod2col2 div.droite {
+ width:25%
+}
+@media (max-width:767px) {
+ #mod2col2 div.gauche {
+  width:100%
+ }
+ #mod2col2 div.droite {
+  width:100%
+ }
+}
+#mod2col2 div.droite,
+#mod2col3b div.droite {
+ float:right
+}
+#mod2col3b div.gauche {
+ width:47%
+}
+#mod2col3b div.droite {
+ width:47%
+}
+@media (max-width:767px) {
+ #mod2col3b div.gauche {
+  width:100%
+ }
+ #mod2col3b div.droite {
+  width:100%
+ }
+}
+#mod2col2 div.gauche h1,
+#mod2col2 div.gauche h2,
+#mod2col2 div.gauche h3,
+#mod2col2 div.gauche p,
+#mod2col3 div.gauche p,
+#mod2col3b div.gauche p {
+ padding:0 10px 0 0
+}
+#mod2col3 div.droite p,
+#mod2col3b div.droite p {
+ padding:0 0 0 4px
+}
+dl.encart2 {
+ text-align:justify;
+ width:100%
+}
+dl.encart280 {
+ text-align:justify;
+ width:80%
+}
+dl.encart2 dt,
+dl.encart280 dt {
+ margin:0;
+ padding:3px;
+ color:#fff;
+ font-weight:700;
+ background:#df5200
+}
+dl.encart2 dd,
+dl.encart280 dd {
+ margin:0;
+ padding:10px;
+ border:1px #df5200 solid
+}
+dl.encart3 {
+ text-align:justify;
+ width:100%
+}
+dl.encart380 {
+ text-align:justify;
+ width:80%
+}
+dl.encart3 dt,
+dl.encart380 dt {
+ margin:0;
+ padding:3px;
+ color:#fff;
+ font-weight:700;
+ background:#10bbf1
+}
+dl.encart3 dd,
+dl.encart380 dd {
+ margin:0;
+ padding:10px;
+ border:1px #10bbf1 solid
+}
+div.encartsanstitre2 {
+ padding:10px;
+ border-top:6px solid #df5200;
+ border-bottom:1px solid #df5200;
+ border-left:1px solid #df5200;
+ border-right:1px solid #df5200
+}
+div.encartsanstitre3 {
+ padding:10px;
+ border-top:6px solid #10bbf1;
+ border-bottom:1px solid #10bbf1;
+ border-left:1px solid #10bbf1;
+ border-right:1px solid #10bbf1
+}
+div.encartutil {
+ padding:0 0 10px 0
+}
+div.encartutil h2 {
+ font-size:20px;
+ color:#565656;
+ line-height:1.42;
+ text-align:left;
+ padding:7px 0 5px 0;
+ border-bottom:1px solid #aaa;
+ margin-bottom:15px
+}
+div.encartutil p {
+ font-size:13px
+}
+table.util {
+ width:100%;
+ margin-bottom:18px;
+ padding:0;
+ border-spacing:0;
+ border-collapse:collapse;
+ border-bottom-color:#049cdb
+}
+table.util td,
+table.util th {
+ padding:10px 10px 9px;
+ line-height:13.5px;
+ text-align:left;
+ vertical-align:middle;
+ border-bottom:1px solid #ddd
+}
+table.util th {
+ font-size:14px;
+ color:#333;
+ padding-top:9px;
+ font-weight:700;
+ border-bottom-width:2px
+}
+table.util td {
+ font-size:13px;
+ color:#555
+}
+table.util tr:nth-child(odd) td {
+ background-color:#f9f9f9
+}
+table.util tr:hover td {
+ background-color:#eef4f9
+}
+div.lp1 {
+ background-color:#f0f0f0
+}
+div.lp2 {
+ background-color:#e6e6e6
+}
+div.lp3 {
+ background-color:#dcdcdc
+}
+div.lp4 {
+ background-color:#d2d2d2
+}
+div.lp5 {
+ background-color:#bebebe
+}
+div.lp6 {
+ background-color:#b4b4b4
+}
+div.lp {
+ padding:30px 15px;
+ min-height:10.5em
+}
+div.lp h2 {
+ color:#000;
+ font-size:1.8em
+}
+div.lp p {
+ font-weight:700;
+ color:#464646
+}
+.nav-tabs>li>a {
+ font-weight:700
+}
+.tab-content {
+ background-color:#fff;
+ padding:15px;
+ border-left:1px solid #ddd;
+ border-right:1px solid #ddd;
+ border-bottom:1px solid #ddd
+}
+.panel-body {
+ background-color:#fff
+}
+.panel-heading .accordion-toggle {
+ background-color:#fff;
+ font-size:14px
+}
+.panel-title>.small,
+.panel-title>.small>a,
+.panel-title>a,
+.panel-title>small,
+.panel-title>small>a {
+ font-size:14px;
+ font-weight:700
+}
+.btn-dark-primary {
+ color:#fff;
+ background-color:#0c2e40;
+ border-color:#0c2e40
+}
+.btn-dark-primary:hover {
+ color:#fff;
+ background-color:#02121b
+}
+.btn-dark-default {
+ color:#0c2e40;
+ background-color:#fff;
+ border-color:#0c2e40
+}
+.btn-dark-default:hover {
+ color:#0c2e40;
+ background-color:#e6e6e6
+}

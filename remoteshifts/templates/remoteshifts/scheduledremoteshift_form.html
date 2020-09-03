@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block style %}{% endblock %}
+{% block scripts %}{% endblock %}
+
+{% block title %}Ajouter un jour de télétravail flottant{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+  <a class="badge badge-primary" href="{% url 'remoteshifts:index' %}">&larr; Retour</a>
+</div>
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="id_day">Spécifier un jour de télétravail flottant :</label>
+    <input type="date" value="{% if form.day.value %}{{ form.day.value|date:"Y\-m\-d" }}{% else %}{% now "Y\-m\-d" %}{% endif %}" class="form-control col-md-4 mr-3 mb-3" required="" id="day" name="day" >
+    {% if form.day.errors %}{% for error in form.day.errors %}
+    <div class="text-danger">{{ error }}</div>
+    {% endfor %}{% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Sauvegarder</button>
+</form>
+
+{% endblock %}

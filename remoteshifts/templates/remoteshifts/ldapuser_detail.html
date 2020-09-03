@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block style %}<link href="{% static "css/intra20_conges.css" %}" rel="stylesheet" type="text/css">
+<style media="screen">
+  .table td, .table th, .table thead th {
+      padding: 0;
+      vertical-align: middle;
+  }
+</style>{% endblock %}
+{% block scripts %}{% endblock %}
+
+{% block title %}Jours de télétravail de {{ object.given_name }} {{ object.sn }}{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+  <a class="badge badge-primary" href="{% url 'remoteshifts:index' %}">&larr; Retour</a>
+</div>
+<h5 class="mt-4">Vos jours fixes :</h5>
+<ul>
+  {% for shift in fixed_remote_shifts %}
+  <li class="font-weight-light">{{ shift.get_fixed_day_display }} (<a class="small text-danger" href="{% url 'remoteshifts:fixed_shift_delete' object.uid shift.id %}">Supprimer</a>)</li>
+  {% empty %}
+  <li class="text-muted">Pas de jours fixes configurés pour le moment</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'remoteshifts:fixed_shift_create' object.uid %}" class="btn btn-sm btn-primary"><i class="far fa-calendar-plus"></i> Ajouter un jour fixe</a>
+<h5 class="mt-4">Vos jours flottants au mois de {{ days.0|date:"F" }} :</h5>
+<ul>
+  {% for shift in scheduled_remote_shifts %}
+  <li>{{ shift.day }}</li>
+  {% empty %}
+  <li class="text-muted">Pas de jours flottants configurés pour le moment</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'remoteshifts:scheduled_shift_create' object.uid %}" class="btn btn-sm btn-primary"><i class="far fa-calendar-plus"></i> Ajouter un jour flottant</a>
+{% endblock %}
