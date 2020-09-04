@@ -39,9 +39,6 @@
  border-spacing:1px
 }
 #conges .calendrier td {
- border:1px solid #ccc;
- width:20px;
- height:25px;
  text-align:center
 }
 #conges .calendrier td.multititre {

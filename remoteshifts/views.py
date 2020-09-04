@@ -3,7 +3,7 @@ from django.utils import timezone
 
 import datetime
 
-from .models import LdapUser, FixedRemoteShift, ScheduledRemoteShift
+from .models import LdapUser, FixedRemoteShift, ScheduledRemoteShift, PartTimeWorkDay, ScheduledHalfDayOff
 
 class IndexView(generic.ListView):
     model=LdapUser
@@ -32,9 +32,13 @@ class IndexView(generic.ListView):
 
         fixed_remote_shifts=FixedRemoteShift.objects.all()
         scheduled_remote_shifts=ScheduledRemoteShift.objects.filter(day__month=month)
+        part_time_work_days=PartTimeWorkDay.objects.all()
+        scheduled_half_days_off=ScheduledHalfDayOff.objects.filter(day__month=month)
 
         context['fixed_remote_shifts'] = fixed_remote_shifts
         context['scheduled_remote_shifts'] = scheduled_remote_shifts
+        context['part_time_work_days'] = part_time_work_days
+        context['scheduled_half_days_off'] = scheduled_half_days_off
 
         return context
 

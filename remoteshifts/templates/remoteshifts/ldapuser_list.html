@@ -14,11 +14,17 @@
   $('.{{ shift.user.uid }}-{{ shift.fixed_day }}').addClass("bg-teal");
   {% endfor %}
 
+	{% for shift in part_time_work_days %}
+  $('.{{ shift.user.uid }}-{{ shift.week_day }}').addClass("table-warning");
+  {% endfor %}
 
   {% for shift in scheduled_remote_shifts %}
   document.getElementById("{{ shift.user.uid }}-{{ shift.day.day }}").className = "bg-teal";
   {% endfor %}
 
+	{% for shift in scheduled_half_days_off %}
+  document.getElementById("{{ shift.user.uid }}-{{ shift.day.day }}").className = "bg-teal";
+  {% endfor %}
 </script>{% endblock %}
 
 {% block title %}{% endblock %}
@@ -64,6 +70,8 @@
       <div class="row legende">
         <div class="col-md-1 col-xs-2"><div class="float-right bg-teal" style="width: 16px; height: 24px;"></div></div>
         <div class="col-md-5 col-xs-4 texte">Jour de télétravail</div>
+				<div class="col-md-1 col-xs-2"><div class="float-right table-warning" style="width: 16px; height: 24px;"></div></div>
+        <div class="col-md-5 col-xs-4 texte">Jour de temps partiel</div>
       </div>
   </div>
 </div>
