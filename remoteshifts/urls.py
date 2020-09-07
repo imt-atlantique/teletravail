@@ -11,4 +11,6 @@ urlpatterns = [
     path('<slug:uid>/shifts/fixed/<int:pk>/delete/', views.FixedRemoteShiftDeleteView.as_view(), name='fixed_shift_delete'),
     path('<slug:uid>/shifts/scheduled/create/', views.ScheduledRemoteShiftCreateView.as_view(), name='scheduled_shift_create'),
     path('<slug:uid>/shifts/scheduled/<int:pk>/', views.ScheduledRemoteShiftUpdateView.as_view(), name='scheduled_shift_update'),
+    path('<slug:uid>/shifts/scheduled/<int:pk>/delete/', views.ScheduledRemoteShiftDeleteView.as_view(), name='scheduled_shift_delete'),
+
 ]

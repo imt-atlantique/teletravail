@@ -97,3 +97,7 @@ class ScheduledRemoteShiftCreateView(generic.CreateView):
         user = LdapUser.objects.get(pk=self.kwargs.get('uid'))
         form.instance.user = user
         return super().form_valid(form)
+
+class ScheduledRemoteShiftDeleteView(generic.DeleteView):
+    model = ScheduledRemoteShift
+    success_url = '/teletravail/'
