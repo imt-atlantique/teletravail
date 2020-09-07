@@ -23,7 +23,7 @@
   {% endfor %}
 
 	{% for shift in scheduled_half_days_off %}
-  document.getElementById("{{ shift.user.uid }}-{{ shift.day.day }}").className = "bg-teal";
+  document.getElementById("{{ shift.user.uid }}-{{ shift.day.day }}").className = "table-warning";
   {% endfor %}
 </script>{% endblock %}
 

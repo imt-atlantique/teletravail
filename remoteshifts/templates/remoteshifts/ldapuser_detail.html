@@ -30,7 +30,7 @@
 <h5 class="mt-4">Vos jours flottants au mois de {{ days.0|date:"F" }} :</h5>
 <ul>
   {% for shift in scheduled_remote_shifts %}
-  <li>{{ shift.day }}</li>
+  <li>{{ shift.day }} (<a class="small text-danger" href="{% url 'remoteshifts:scheduled_shift_delete' object.uid shift.id %}">Supprimer</a>)</li>
   {% empty %}
   <li class="text-muted">Pas de jours flottants configurés pour le moment</li>
   {% endfor %}
