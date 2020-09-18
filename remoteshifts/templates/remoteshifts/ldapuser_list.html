@@ -61,7 +61,7 @@
           <tr>
             <td class="font-weight-light">{{ user.given_name }} {{ user.sn }} <a href="{% url 'remoteshifts:user_shifts' user.uid %}" class="text-primary" style="float: right;"><i class="fas fa-user-edit"></i></a></td>
             {% for day in days %}
-            <td id="{{ user.uid }}-{{ day|date:"j" }}" class="{{ user.uid }}-{{ day|date:"w" }}{% if day|date:"w" == '0' or day|date:"w" == '6'  %} we{% endif %}{% if day|date:"j" == now|date:"j" %} aujourdhui{% endif %}"></td>
+            <td id="{{ user.uid }}-{{ day|date:"j" }}" class="{{ user.uid }}-{{ day|date:"w" }}{% if day|date:"w" == '0' or day|date:"w" == '6'  %} we{% endif %}"></td>
             {% endfor %}
           </tr>
           {% endfor %}
