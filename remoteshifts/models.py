@@ -1,5 +1,7 @@
 from django.db import models
 
+import requests, json, locale
+
 class LdapUser(models.Model):
     uid=models.SlugField(primary_key=True)
     supann_alias_login=models.CharField(max_length=16)
@@ -58,6 +60,21 @@ class ScheduledRemoteShift(models.Model):
     user=models.ForeignKey(LdapUser, on_delete=models.CASCADE)
     day=models.DateField(verbose_name="Jour flottant de télétravail")
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # send a mattermost notification
+        locale.setlocale(locale.LC_TIME, "fr_FR")
+        r = requests.post(
+            'https://mattermost.imt-atlantique.fr/hooks/rrfqwxpxnbypicxahxn9gmzknw',
+            data = json.dumps(
+                {'text':"Ajout d'un jour de télétravail flottant le %s par %s." % (
+                    self.day.strftime('%A %d %B %Y'),
+                    self.user.given_name)
+                }
+            )
+        )
+
     class Meta:
         verbose_name = 'Jour flottant de télétravail'
         verbose_name_plural = 'Jours flottants de télétravail'
@@ -72,6 +89,9 @@ class ScheduledHalfDayOff(ScheduledRemoteShift):
         choices=HALF_DAY_CHOICES,
         default='pm',
     )
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Demi-journée de congés'

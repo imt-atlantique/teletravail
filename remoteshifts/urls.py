@@ -5,6 +5,7 @@ from . import views
 app_name = 'remoteshifts'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    path('<int:year>/<int:month>/', views.report_view, name='report'),
     path('<slug:pk>/shifts/', views.UserDetailView.as_view(), name='user_shifts'),
     path('<slug:uid>/shifts/fixed/create/', views.FixedRemoteShiftCreateView.as_view(), name='fixed_shift_create'),
     path('<slug:uid>/shifts/fixed/<int:pk>/', views.FixedRemoteShiftUpdateView.as_view(), name='fixed_shift_update'),
